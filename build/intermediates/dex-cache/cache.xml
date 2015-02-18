@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/classes-da5eda9d7602e9c383cd2fed1ef65423b3ef8bbe.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/log4j-1.2.17.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5af35056b4d257e4b64b9e8069c0746e8b08629f">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/log4j-1.2.17-16a80cc184042160cfd284f840855b6262c4d94c.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/SocialPlay-api-data-template-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="17ab0d27bf32fe3c563967c44b887de6ff73345e">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/SocialPlay-api-data-template-1.24.4-081c7a711552e3af369dbd25ae42d8e696ddd59a.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/netty.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="74183fed9f1b73f36de2be0d0c8e2761b6b0c8ba">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/netty-1b1017993b8a7e0c43e476dd240a579566a2f9fc.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/ATTSpeechKit.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5a732dd915416b0d1af263c0380653f505f93308">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/ATTSpeechKit-da5869a3058e7889512806f4ba7b0f77ec29f1a5.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/restli-common-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6c375a166ad1f69d1a75ac4766e1961c6fcaae19">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/restli-common-1.24.4-06286b7d43ebe0a841e2b81896350595ee54c016.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/httpclient-4.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="abe99a8183c7c154ba1fd0f4b6a3bd42ae67d115">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/httpclient-4.3-f1a29bf807204e00268445464e88434478550020.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/SocialPlay-api-rest-client-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="26d2a16f582781b69e92c088acd5e9c398f2b352">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/SocialPlay-api-rest-client-1.24.4-53142579c7c99e52de5ccae504a4052cc7c11708.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/commons-logging-1.1.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f6f66e966c70a83ffbdb6f17a0919eaf7c8aca7f">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/commons-logging-1.1.3-7c96f9f365ae7b039773d5cd99a5fb58784d375b.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/r2-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="85cf5ac72442da4e361dd387392e05ebb3c011b8">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/r2-1.24.4-66ad0ff5eb5f0a2d5f4879ea3db2b4081e495f69.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-6ab9377663346acee94fa0167ef7c7d50c819410.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/SocialPlay-api-1.24.4-javadoc.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="0edf2c8ec3ce376fab194ff01bcb6e255d051ce4">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/SocialPlay-api-1.24.4-javadoc-b071f97b00ed7c60474330cfd4323927719f20c3.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/jackson-annotations-2.3.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f5e853a20b60758922453d56f9ae1e64af5cb3da">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/jackson-annotations-2.3.0-eabdffb7744834532ce6ef84cc57e154730c66dd.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/data-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5b61ec54037f3e005001f66c55c8b6b18d31b212">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/data-1.24.4-8c2888e95bfa6bb73c0ac4c42c7ead2efda582c0.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/SocialPlay-api-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="6c8b481dd77198303a7d8fff602140448ac725ec">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/SocialPlay-api-1.24.4-fd786c6421177a93164cf90b26060354cc76f5e9.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/httpcore-4.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="11393498b38e9695d0850cac26fde5613ae268b9">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/httpcore-4.3-cc71e5bc41095fcb807d2d662fa75c2cfeaf76c9.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/jackson-core-2.3.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="559b70ac8a0d5cad611da4223137a920147201ba">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/jackson-core-2.3.2-ec6251ea26d503553dab301862042e960b8ca7f2.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/smisdk.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="804f0025dc466016bc39412151a0b8e1284da326">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/smisdk-9acaf5a077d04b81574e8d95b0a7403e0d4ff4ee.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-0a319a4ce8b760e96aa18dd5569078d2116cd29b.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/java-json.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="edad9c5de6fb8df07c535a47045956026011ffa3">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/java-json-56c6791956b5faa6c8463d15e7e8553c119361b5.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/pegasus-common-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="847c9d9eefb4ab1eea6b85ccd8bd56cac2b36341">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/pegasus-common-1.24.4-c9bdd9f8316555443f4d888887a3aa2039d984e8.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/dropbox-core-sdk-1.7.7.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f7ef429fd609827126cf5b430dfb3ad832a70d9e">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/dropbox-core-sdk-1.7.7-9c265472c5d2a1dfc9bc6f9548d4fd955038453f.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/slf4j-log4j12-1.7.9.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="5586044ba34544a9318bd7508f738dc967cd5e99">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/slf4j-log4j12-1.7.9-30e1bb4c88e9ff2254c4476b0c35bc988a53eb30.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/exploded-aar/BallDetectorDemo/openCVLibrary2410/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e74cfac7d34a16e2710233a104f2406186bfaef3">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/classes-be7e027ee68ec573f5eca7f868fdee55f41694d3.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/li-jersey-uri-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="37203063dc26d19ad6e2ae72ed1446399910aa7d">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/li-jersey-uri-1.24.4-8bc9c69e0f2d9c274fa771275621b12f0368d08d.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/classes-167295c02cf32917cabac4288140ca09f84d14d9.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/slf4j-api-1.6.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8619e95939167fb37245b5670135e4feb0ec7d50">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/slf4j-api-1.6.2-3a8da87e6add1a5b7c17c88d2f9ae47c46a8d2d7.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/restli-client-1.24.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="509a4f16715ae493fa8fddc1ee1a870fdb5cde19">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/restli-client-1.24.4-80bda930baeaa0a61f694ed4e677ee0078011d2b.jar" />
+    </item>
+    <item
+        jar="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/libs/jackson-databind-2.3.2.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c75edc740a6d8cb1cef6fa82fa594e0bce561916">
+        <dex dex="/Users/jianli/Downloads/BallDetectorDemo/balldetectordemo/build/intermediates/pre-dexed/debug/jackson-databind-2.3.2-ddac866c510cf39eb75fa741b760a1199caec981.jar" />
+    </item>
+
+</items>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TreasureHunt</string>
+    <string name="app_title">TreasureHunt</string>
+    <string name="wait">Please Wait</string>
+    <string name="connecting">Connecting...</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="button_hangup">Hangup</string>
+    <string name="button_connect">Connect To Social Play</string>
+    <string name="button_daniel">Daniel</string>
+    <string name="button_anne">Anne</string>
+    <string name="button_charlie">Charlie</string>
+    <string name="score">Score:</string>
+    <string name="remaining">Time remaining for challenge:</string>
+</resources>

@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        Fabio {
+            keyAlias 'Fabio Dominio'
+            keyPassword 'password'
+        }
+    }
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+    defaultConfig {
+        applicationId "com.dominio.fabio.balldetectordemo"
+        minSdkVersion 14
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+          packagingOptions {
+            exclude 'META-INF/LICENSE'
+exclude 'META-INF/NOTICE'
+exclude 'META-INF/LICENSE.txt'
+exclude 'META-INF/NOTICE.txt'
+exclude 'META-INF/DEPENDENCIES'
+          }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile project(':openCVLibrary2410')
+}
