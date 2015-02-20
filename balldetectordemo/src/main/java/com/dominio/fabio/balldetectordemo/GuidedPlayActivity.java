@@ -48,13 +48,14 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 	private String chatRoom = null;
 	private TextView scoreView = null;
 	private TextView timerView = null;
-	private MediaPlayer mp = null;
+    private static TextView savedTimerView = null;
+	private static MediaPlayer mp = null;
 
-    private CountDownTimer countDownTimer;
+    private static CountDownTimer countDownTimer = null;
     private final long startTime = 30 * 1000;
     private final long interval = 1 * 1000;
     private int challengeCount = 1;
-    private int score = 0;
+    private static int score = 0;
     private static int challengeLimit = 2;
 
     private BallDetectorView mOpenCvCameraView;
@@ -110,8 +111,10 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 
         @Override
         public void onTick(long millisUntilFinished) {
-        	timerView.setText(R.string.remaining);
-        	timerView.setText(timerView.getText() + "" + millisUntilFinished / 1000);
+            Log.e(TAG, "onTick: millisUntilFinished = " + millisUntilFinished);
+            savedTimerView.setText(R.string.remaining);
+            savedTimerView.setText(savedTimerView.getText() + "" + millisUntilFinished / 1000);
+            savedTimerView.setVisibility(View.VISIBLE);
         }
     }
     
@@ -134,7 +137,7 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-		Log.e(TAG, "On create");
+		Log.e(TAG, "On create : " + (countDownTimer == null));
 		setContentView(R.layout.guidedplay);
 
         mOpenCvCameraView = (BallDetectorView) findViewById(R.id.balldetectorview);
@@ -159,12 +162,11 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 		scoreView.setText(R.string.score);
 		displayScore();
 		timerView = (TextView) findViewById(R.id.timer);
+        savedTimerView = timerView;
 
-		playAudio();
-		startTimer(startTime, interval);
-		imageView = (ImageView) findViewById(R.id.guidedImageView);
-        imageView.setImageResource(R.drawable.puff_cow);
-        imageView.setVisibility(View.VISIBLE);
+//		imageView = (ImageView) findViewById(R.id.guidedImageView);
+//        imageView.setImageResource(R.drawable.puff_cow);
+//        imageView.setVisibility(View.VISIBLE);
 //		imageView.setBackgroundResource(R.drawable.start);
 //		imageView.post(new Runnable() {
 //			@Override
@@ -281,11 +283,10 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 
     private void playAudio()
 	{
-
 		mp = MediaPlayer.create(this, (challengeCount == 1) ? R.raw.challenge1
 				: R.raw.challenge2);
 
-		long duration = (long) mp.getDuration() + 500;
+//		long duration = (long) mp.getDuration() + 500;
 		mp.start();
 //		PlaydateActivity.sleep(duration);	
 	}
@@ -293,7 +294,6 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 	private void startTimer(long period, long interval)
 	{
         countDownTimer = new MyCountDownTimer(period, interval);
-        timerView.setText(String.valueOf(startTime / 1000));
         countDownTimer.start();
 	}
 
@@ -314,6 +314,20 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 				"clearView preserve previous chat room: "
 						+ PlaydateActivity.previousChatRoom);
 
+        // stop the timer activity
+        if(countDownTimer != null)
+        {
+            countDownTimer.cancel();
+            timerView.setText("");
+            countDownTimer = null;
+        }
+
+        if(mp != null)
+        {
+            mp.pause();
+            mp = null;
+        }
+
 		startActivity(new Intent(getApplicationContext(),
 				PlaydateActivity.class));
 	}
@@ -327,6 +341,11 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 		super.onStart();
 
 		Log.e(TAG, "on start: chatRoom = " + chatRoom);
+
+        if(countDownTimer == null){
+            playAudio();
+            startTimer(startTime, interval);
+        }
 	}
 
 	/**

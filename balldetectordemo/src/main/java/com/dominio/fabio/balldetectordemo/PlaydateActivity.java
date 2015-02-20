@@ -284,6 +284,14 @@ public class PlaydateActivity extends Activity {
 
 		Intent intent = new Intent(getApplicationContext(), TreasureHuntImageActivity.class);
 		intent.putExtra(CHATROOM, chatRoom);
+        if(mp != null)
+        {
+            mp.pause();
+        }
+        if(mp2 != null)
+        {
+            mp2.pause();
+        }
 		startActivity(intent);
 	}
 	/**
