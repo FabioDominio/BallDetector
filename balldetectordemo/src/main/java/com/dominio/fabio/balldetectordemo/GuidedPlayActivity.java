@@ -52,7 +52,7 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 	private static MediaPlayer mp = null;
 
     private static CountDownTimer countDownTimer = null;
-    private final long startTime = 30 * 1000;
+    private final long startTime = 60 * 1000;
     private final long interval = 1 * 1000;
     private int challengeCount = 1;
     private static int score = 0;
@@ -65,6 +65,14 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
     private MenuItem[] mResolutionMenuItems;
     private SubMenu mResolutionMenu;
     private BallDetector ballDetector;
+
+    private final int RED = 1;
+    private final int GREEN = 2;
+    private final int YELLOW = 4;
+    private final int BLUE = 3;
+
+    private static int foundInstanceCount = 0;
+    private final int FIRMCOUNT = 5;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -90,6 +98,7 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
     }
 
     public class MyCountDownTimer extends CountDownTimer {
+        private boolean isCancelled = false;
         public MyCountDownTimer(long startTime, long interval) {
             super(startTime, interval);
         }
@@ -98,26 +107,57 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
         public void onFinish() {
         	challengeCount++;
 			if (challengeCount <= challengeLimit) {
-				score += 10;
-				displayScore();
 				playAudio();
 				startTimer(startTime, interval);
 			}
 			else
 			{
-				timerView.setText("");
+                savedTimerView.setText("");
+//                savedTimerView.setVisibility(View.INVISIBLE);
 			}
         }
 
         @Override
         public void onTick(long millisUntilFinished) {
-            Log.e(TAG, "onTick: millisUntilFinished = " + millisUntilFinished);
-            savedTimerView.setText(R.string.remaining);
-            savedTimerView.setText(savedTimerView.getText() + "" + millisUntilFinished / 1000);
-            savedTimerView.setVisibility(View.VISIBLE);
+            if (!isCancelled) {
+                Log.e(TAG, "onTick: millisUntilFinished = " + millisUntilFinished);
+                savedTimerView.setText(R.string.remaining);
+                savedTimerView.setText(savedTimerView.getText() + "" + millisUntilFinished / 1000);
+                savedTimerView.setVisibility(View.VISIBLE);
+
+                if (foundInstanceCount >= FIRMCOUNT) {
+                    wonChallenge();
+
+                    isCancelled = true;
+                    this.cancel();
+                    // force the current challenge to finish
+                    onFinish();
+                }
+            }
         }
     }
-    
+
+    private void wonChallenge()
+    {
+        foundInstanceCount = 0;
+//        String caption = "You found it! Win 10 Points!";
+//        Toast.makeText(this, caption, Toast.LENGTH_SHORT).show();
+        mp = MediaPlayer.create(this, R.raw.win);
+        long duration = (long)mp.getDuration() + 500;
+        mp.start();
+
+        score += 10;
+        displayScore();
+
+//        if(countDownTimer != null)
+//        {
+//            countDownTimer.cancel();
+//            savedTimerView.setText("");
+//            countDownTimer = null;
+//        }
+        sleep(duration);
+    }
+
     private void displayScore()
     {
 		scoreView.setText(R.string.score);		
@@ -207,8 +247,53 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 
     public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
         Mat frame = inputFrame.rgba();
-        ballDetector.findBall(frame);
+        int result = ballDetector.findBall(frame);
+//        Log.e(TAG, "onCameraFrame returns result: " + result);
+        showResult(result);
         return frame;
+    }
+
+    private void checkResult(int color)
+    {
+        switch (challengeCount)
+        {
+            case 1:
+                if(color == RED) foundInstanceCount++;
+                break;
+            case 2:
+                if(color == YELLOW) foundInstanceCount++;
+                break;
+        }
+
+    }
+    private void showResult(int result)
+    {
+        int x = result & 0x10;
+        if( x == 16) {
+            Log.e(TAG, "found ball shape!");
+            int color = result & 0xf;
+
+            checkResult(color);
+
+            switch (color) {
+                case RED:
+                    Log.e(TAG, "it's red!");
+                    break;
+                case GREEN:
+                    Log.e(TAG, "it's green!");
+                    break;
+                case BLUE:
+                    Log.e(TAG, "it's blue!");
+                    break;
+                case YELLOW:
+                    Log.e(TAG, "it's yellow!");
+                    break;
+            }
+        }
+        else
+        {
+//            Log.e(TAG, "didn't find ball shape!");
+        }
     }
 
     @Override
