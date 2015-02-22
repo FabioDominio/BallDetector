@@ -72,6 +72,7 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
     private final int BLUE = 3;
 
     private static int foundInstanceCount = 0;
+    private static int foundWrongInstanceCount = 0;
     private final int FIRMCOUNT = 5;
 
     private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
@@ -133,8 +134,21 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
                     // force the current challenge to finish
                     onFinish();
                 }
+
+                if (foundWrongInstanceCount >= FIRMCOUNT) {
+                    foundWrongInstanceCount = 0;
+                    if (!mp.isPlaying())
+                        playWrongColorInstance();
+                }
             }
         }
+    }
+
+    private void playWrongColorInstance()
+    {
+        mp = MediaPlayer.create(this, R.raw.wrongcolor);
+        long duration = (long)mp.getDuration() + 500;
+        mp.start();
     }
 
     private void wonChallenge()
@@ -142,7 +156,7 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
         foundInstanceCount = 0;
 //        String caption = "You found it! Win 10 Points!";
 //        Toast.makeText(this, caption, Toast.LENGTH_SHORT).show();
-        mp = MediaPlayer.create(this, R.raw.win);
+        mp = MediaPlayer.create(this, R.raw.youwon);
         long duration = (long)mp.getDuration() + 500;
         mp.start();
 
@@ -259,9 +273,14 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
         {
             case 1:
                 if(color == RED) foundInstanceCount++;
+                else foundWrongInstanceCount++;
                 break;
             case 2:
                 if(color == YELLOW) foundInstanceCount++;
+                else foundWrongInstanceCount++;
+                break;
+            default:
+                foundWrongInstanceCount++;
                 break;
         }
 
@@ -378,6 +397,8 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
 	
 	private void startTimer(long period, long interval)
 	{
+        foundInstanceCount = 0;
+        foundWrongInstanceCount = 0;
         countDownTimer = new MyCountDownTimer(period, interval);
         countDownTimer.start();
 	}
