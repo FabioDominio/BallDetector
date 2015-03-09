@@ -1,5 +1,15 @@
 package com.dominio.fabio.balldetectordemo;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Collections;
+import java.util.Date;
+
+import org.json.JSONObject;
+
 import android.os.Handler;
 import android.util.Log;
 
@@ -14,16 +24,6 @@ import com.linkedin.restli.common.EmptyRecord;
 import com.peets.socialplay.server.SocialPlayBuilders;
 import com.peets.socialplay.server.SocialPlayContext;
 
-import org.json.JSONObject;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Collections;
-import java.util.Date;
-
 /**
  * the social play server handles three scenarios: 1. find a chat room 2. get an
  * existing room if there's any, which indicates there's an incoming connection
@@ -34,7 +34,6 @@ import java.util.Date;
  * that it doesn't block the main UI.
  **/
 public class SocialPlayServer {
-
     private static final String TAG = "SocialPlayServer";
 	/** Supplies SocialPlayServer response back to client. **/
 	public interface Client {

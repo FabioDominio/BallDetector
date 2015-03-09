@@ -14,11 +14,12 @@ import java.util.List;
 
 public class BallDetectorView extends JavaCameraView implements PictureCallback {
 
-    private static final String TAG = "Sample::DetectorView";
+    private static final String TAG = "BallDetectorView";
     private String mPictureFileName;
 
     public BallDetectorView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setCameraIndex(0);
     }
 
     public List<String> getEffectList() {

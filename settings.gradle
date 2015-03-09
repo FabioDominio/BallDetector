@@ -1,1 +1,1 @@
-include ':openCVLibrary2410', ':balldetectordemo'
+include ':libraries/opencv',':balldetectordemo'

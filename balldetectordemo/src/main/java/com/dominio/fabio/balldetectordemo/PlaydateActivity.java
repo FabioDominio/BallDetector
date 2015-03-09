@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import org.opencv.samples.ballDetector.R;
 
 /*
- * the main activity to host the webRTC connectivity
+ * the main activity to host a plat date via WebRTC
  */
 public class PlaydateActivity extends Activity {
     private static final String TAG = "PlaydateActivity";
@@ -29,9 +29,7 @@ public class PlaydateActivity extends Activity {
 	// state information
 	private String chatRoom = null;
 	public static String previousChatRoom = null;
-	private boolean acceptIncomingRequest = false;
 	private boolean chatInProgress = false;
-	private boolean isClearingWebView = false;
 
 	// server related constants
 	private static final String BASE_URL = "http://54.183.228.194:8080/SocialPlay-server/";
@@ -39,7 +37,6 @@ public class PlaydateActivity extends Activity {
 	private static final String GET_URL = SERVER_URL + "/1";
 	private static final String UPDATE_URL = SERVER_URL + "/2";
 	private static final String FIND_URL = SERVER_URL + "?action=findChatRoom";
-	public static String WEBRTC_URL = "https://apprtc.appspot.com";
 	
 	private MediaPlayer mp = null;
 	private MediaPlayer mp2 = null;
@@ -48,6 +45,7 @@ public class PlaydateActivity extends Activity {
 	private CheckExistingConnectionTask checkTask = null;
 	
 	public static String CHATROOM = "chatRoom";
+	public static String IS_INITIATOR = "isInitiator";
 	/**
 	 * Called when the activity is first created. This is where we'll hook up
 	 * our views in XML layout files to our application.
@@ -60,7 +58,6 @@ public class PlaydateActivity extends Activity {
 		Log.e(TAG, "On create");
 		setContentView(R.layout.playdate);
 
-        chatRoom = "123456789";
 		// this is the button for a user to connect to a friend
 		danielButton = (Button) findViewById(R.id.button1);
 		danielButton.setOnClickListener(new OnClickListener() {
@@ -70,8 +67,7 @@ public class PlaydateActivity extends Activity {
 
 				danielButton.setText(R.string.connecting);
 				disableButtons();
-                proceedToChat();
-//				findChatRoomAndConnect();
+				findChatRoomAndConnect();
 			}
 		});
 
@@ -83,8 +79,7 @@ public class PlaydateActivity extends Activity {
 
 				danielButton.setText(R.string.connecting);
 				disableButtons();
-                proceedToChat();
-//				findChatRoomAndConnect();
+				findChatRoomAndConnect();
 			}
 		});
 
@@ -96,8 +91,7 @@ public class PlaydateActivity extends Activity {
 
 				anneButton.setText(R.string.connecting);
 				disableButtons();
-                proceedToChat();
-//				findChatRoomAndConnect();
+				findChatRoomAndConnect();
 			}
 		});
 		
@@ -136,8 +130,8 @@ public class PlaydateActivity extends Activity {
 		super.onStart();
 		
 
-//		checkTask = new CheckExistingConnectionTask();
-//		checkTask.execute();
+		checkTask = new CheckExistingConnectionTask();
+		checkTask.execute();
 		
 		if(mp2 == null)
 		{
@@ -149,9 +143,6 @@ public class PlaydateActivity extends Activity {
 		}
 		duration = (long)mp.getDuration() + 500;
 		mp.start();
-
-//		sleep(duration);
-//		duration = (long)mp2.getDuration() + 500;
 		
 		danielButton.setText(R.string.button_daniel);
 		danielButton.setEnabled(true);
@@ -269,7 +260,7 @@ public class PlaydateActivity extends Activity {
 			if(result)
 			{
 				// remote party accepted, now go to the video chat
-				proceedToChat();
+				proceedToChat(true);
 			}else{
 				Log.e(TAG, "onPostExecute show alert and back to start");
 				alert("Your friend didn't accept your invite", "Please try again!");
@@ -278,20 +269,13 @@ public class PlaydateActivity extends Activity {
 		}
 	}
 
-	private void proceedToChat()
+	private void proceedToChat(boolean isInitiator)
 	{
 		imageView.setImageResource(R.drawable.treasurehunt);
 
 		Intent intent = new Intent(getApplicationContext(), TreasureHuntImageActivity.class);
 		intent.putExtra(CHATROOM, chatRoom);
-        if(mp != null)
-        {
-            mp.pause();
-        }
-        if(mp2 != null)
-        {
-            mp2.pause();
-        }
+		intent.putExtra(IS_INITIATOR, isInitiator ? "true" : "false");
 		startActivity(intent);
 	}
 	/**
@@ -381,13 +365,12 @@ public class PlaydateActivity extends Activity {
 								Log.e(TAG, "OK clicked, will stop mp2");
 								stopRing();
 								dialog.dismiss();
-								acceptIncomingRequest = true;
 								
 								// update the server that it accepted the request
 								SocialPlayServer server = SocialPlayServer.updateConnection(UPDATE_URL);
 								if(server.performIsConnectionEstablished()){
 									Log.e(TAG, "connection established");
-									proceedToChat();
+									proceedToChat(false);
 								}
 							}
 						});
@@ -414,7 +397,6 @@ public class PlaydateActivity extends Activity {
 	 */
 	private void findChatRoomAndConnect() {
 		Log.e(TAG, "findChatRoomAndConnect");
-//		imageView.setImageResource(R.drawable.treasurehunt);
 		Log.e(TAG, "will cancel the checkTask");
 		chatInProgress = true;
 		if(checkTask != null)

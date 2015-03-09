@@ -7,5 +7,4 @@
         android:layout_height="match_parent"
         android:visibility="gone"
         android:id="@+id/balldetector_activity_java_surface_view" />
-
 </LinearLayout>

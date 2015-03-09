@@ -28,7 +28,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ListIterator;
 
-public class BallDetectorActivity extends Activity implements CvCameraViewListener2, OnTouchListener {
+//public class BallDetectorActivity extends Activity implements CvCameraViewListener2, OnTouchListener {
+public class BallDetectorActivity extends Activity implements CvCameraViewListener2 {
     private static final String TAG = "BallDetect::Activity";
 
     private BallDetectorView mOpenCvCameraView;
@@ -47,7 +48,7 @@ public class BallDetectorActivity extends Activity implements CvCameraViewListen
                 {
                     Log.i(TAG, "OpenCV loaded successfully");
                     mOpenCvCameraView.enableView();
-                    mOpenCvCameraView.setOnTouchListener(BallDetectorActivity.this);
+                    //mOpenCvCameraView.setOnTouchListener(BallDetectorActivity.this);
                     ballDetector = new BallDetector();
                 } break;
                 default:
@@ -168,6 +169,7 @@ else {
         return true;
     }
 
+    /*
     @SuppressLint("SimpleDateFormat")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
@@ -180,5 +182,6 @@ else {
         Toast.makeText(this, fileName + " saved", Toast.LENGTH_SHORT).show();
         return false;
     }
+    */
 
 }

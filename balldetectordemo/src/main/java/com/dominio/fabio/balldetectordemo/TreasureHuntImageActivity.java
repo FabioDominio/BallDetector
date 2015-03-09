@@ -67,9 +67,11 @@ public class TreasureHuntImageActivity extends Activity {
 		Intent intent = getIntent();
 	    
 		String chatRoom = intent.getStringExtra(PlaydateActivity.CHATROOM);
-		
+		String isInitiator = intent.getStringExtra(PlaydateActivity.IS_INITIATOR);
+
 		intent = new Intent(getApplicationContext(), GuidedPlayActivity.class);
 		intent.putExtra(PlaydateActivity.CHATROOM, chatRoom);
+		intent.putExtra(PlaydateActivity.IS_INITIATOR, isInitiator);
 		startActivity(intent);
 	}
 

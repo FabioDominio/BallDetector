@@ -38,9 +38,15 @@
         android:layout_weight="9"
         android:orientation="horizontal" >
 
-        <com.dominio.fabio.balldetectordemo.BallDetectorView
-            android:layout_width="match_parent"
+        <WebView android:id="@+id/chatview"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <com.dominio.fabio.balldetectordemo.BallDetectorView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:visibility="gone"
             android:id="@+id/balldetectorview" />
     </LinearLayout>
