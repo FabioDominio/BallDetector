@@ -477,10 +477,10 @@ public class GuidedPlayActivity extends Activity implements CvCameraViewListener
                 resId = R.raw.challenge2;
                 break;
             case 3:
-                resId = R.raw.challenge3;
+               // resId = R.raw.challenge3;
                 break;
             case 4:
-                resId = R.raw.challenge4;
+               // resId = R.raw.challenge4;
                 break;
         }
         mp = MediaPlayer.create(this, resId);
